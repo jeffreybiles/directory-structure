@@ -11,6 +11,8 @@
       {{#each folder.files as |file|}}
         <div>{{file.name}}</div>
       {{/each}}
+      {{item-adder parent=folder itemType='folder'}}
+      {{item-adder parent=folder itemType='file'}}
     {{/if}}
   </div>
 </div>

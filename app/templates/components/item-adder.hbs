@@ -1,0 +1,6 @@
+{{#if isEditing}}
+  {{itemType}} name: {{input value=name}}
+  <button {{action 'save'}}>Save</button>
+{{else}}
+  <button {{action 'startItemNaming'}}>+ {{itemType}}</button>
+{{/if}}
