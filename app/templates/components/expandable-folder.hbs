@@ -5,6 +5,9 @@
   </span>
   <div class="expanded-content">
     {{#if isExpanded}}
+      {{#each folder.folders as |folder|}}
+        {{expandable-folder folder=folder}}
+      {{/each}}
       {{#each folder.files as |file|}}
         <div>{{file.name}}</div>
       {{/each}}
