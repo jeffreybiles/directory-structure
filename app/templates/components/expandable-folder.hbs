@@ -1,0 +1,13 @@
+<div class="sidebar-folder">
+  <span class="expander" {{action 'toggleExpansion'}}>
+    {{if isExpanded '-' '+'}}
+    {{folder.name}}
+  </span>
+  <div class="expanded-content">
+    {{#if isExpanded}}
+      {{#each folder.files as |file|}}
+        <div>{{file.name}}</div>
+      {{/each}}
+    {{/if}}
+  </div>
+</div>

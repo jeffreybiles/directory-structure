@@ -8,6 +8,10 @@
 }
 
 .sidebar-folder {
-  padding: 10px;
+  padding: 5px;
   font-size: 1.3em;
+}
+
+.expanded-content {
+  margin-left: 30px;
 }
