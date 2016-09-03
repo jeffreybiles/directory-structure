@@ -8,7 +8,7 @@ export default Ember.Component.extend({
     },
     save(){
       this.set('isEditing', false)
-      
+
       let parent = this.get('parent');
       let itemType = this.get('itemType');
 
@@ -21,7 +21,9 @@ export default Ember.Component.extend({
         item.set('parent', parent);
       }
       item.save();
-      parent.save();
+      if(parent){
+        parent.save();
+      }
     }
   }
 });

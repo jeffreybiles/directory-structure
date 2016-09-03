@@ -1,15 +1,26 @@
 <div class="sidebar-folder">
-  <span class="expander" {{action 'toggleExpansion'}}>
-    {{if isExpanded '-' '+'}}
-    {{folder.name}}
-  </span>
+  {{#if isEditing}}
+    <span class="expander" {{action 'toggleExpansion'}}>
+      {{if isExpanded '-' '+'}}
+    </span>
+    {{input value=folder.name}}
+    <button {{action 'save'}}>Save</button>
+    <button {{action 'destroy'}}>Destroy</button>
+  {{else}}
+    <span class="expander" {{action 'toggleExpansion'}}>
+      {{if isExpanded '-' '+'}}
+      {{folder.name}}
+    </span>
+    <button {{action 'edit'}}>Edit</button>
+  {{/if}}
+
   <div class="expanded-content">
     {{#if isExpanded}}
       {{#each folder.folders as |folder|}}
         {{expandable-folder folder=folder}}
       {{/each}}
       {{#each folder.files as |file|}}
-        <div>{{file.name}}</div>
+        <div>{{editable-file file=file}}</div>
       {{/each}}
       {{item-adder parent=folder itemType='folder'}}
       {{item-adder parent=folder itemType='file'}}

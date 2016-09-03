@@ -1,0 +1,8 @@
+{{#if isEditing}}
+  {{input value=file.name}}
+  <button {{action 'save'}}>Save</button>
+  <button {{action 'delete'}}>Delete</button>
+{{else}}
+  {{file.name}}
+  <button {{action 'edit'}}>Edit</button>
+{{/if}}
