@@ -1,8 +1,10 @@
 {{#if isEditing}}
   {{input value=file.name}}
+  {{input value=file.size size='6'}}kb
   <button {{action 'save'}}>Save</button>
   <button {{action 'delete'}}>Delete</button>
 {{else}}
-  {{file.name}}
+  {{file.name}}--
+  {{file.displaySize}}
   <button {{action 'edit'}}>Edit</button>
 {{/if}}

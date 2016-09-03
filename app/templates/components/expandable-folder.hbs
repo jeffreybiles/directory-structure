@@ -3,13 +3,13 @@
     <span class="expander" {{action 'toggleExpansion'}}>
       {{if isExpanded '-' '+'}}
     </span>
-    {{input value=folder.name}}
+    {{input value=folder.name}}-- {{folder.size}}kb
     <button {{action 'save'}}>Save</button>
     <button {{action 'destroy'}}>Destroy</button>
   {{else}}
     <span class="expander" {{action 'toggleExpansion'}}>
       {{if isExpanded '-' '+'}}
-      {{folder.name}}
+      {{folder.name}}-- {{folder.size}}kb
     </span>
     <button {{action 'edit'}}>Edit</button>
   {{/if}}
